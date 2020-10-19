@@ -1,0 +1,17 @@
+---
+layout: default
+---
+{% include header.html %}
+<style>
+
+</style>
+<main id=site-main>
+    <p id=posts-container>posts:
+        <ul>
+            {% for post in site.posts %}
+            <li><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a><span class="muted">{{ post.date | date: "%b %-d, %Y" }}</span></li>
+            {% endfor %}
+        </ul>
+    </p>
+</main>
+{% include footer.html %}

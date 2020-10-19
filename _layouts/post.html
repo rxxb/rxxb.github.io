@@ -1,0 +1,17 @@
+---
+layout: default
+---
+{% include header.html %}
+<style>
+    
+</style>
+<main id=site-main>
+    <header id="post-header">
+        <h5 id="post-title">{{ page.title }}</h5>
+        <p id="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+    </header>
+    <article id="post-content">
+        {{ content }}
+    </article>
+</main>
+{% include footer.html %}
