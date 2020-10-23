@@ -20,6 +20,7 @@ $muted-background: #f5f5f5;
 $dark: #444;
 $light: #fff;
 
+
 html {
     -webkit-tap-highlight-color: transparent;
 }
@@ -30,14 +31,15 @@ body {
     color: $main-color;
     font-weight: 400;
     line-height: 1.8rem;
-    margin: 50rem 0;
+    margin: 50rem 15%;
+    width: 70%;
     margin-top: 0;
-}
-
-body * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 }
 
 p, 
@@ -90,23 +92,26 @@ h6 {
 pre, code {
     line-height: 1.5rem;
     background-color: $muted-background;
+    border: 1px solid $border-color;
 }
 
 pre  {
     font-family: $sans-serif;
     padding: .5rem;
-    border: 1px solid $border-color;
     overflow: auto;
 }
 
 code {
     font-family: $monospace;
-    padding: .2rem .3rem;
+    padding: .1rem .3rem;
 }
 
-pre > code {
-    background-color: transparent;
-    padding: 0;
+pre {
+    code {
+        background-color: transparent;
+        border-style: none;
+        padding: 0;
+    }
 }
 
 /* image */
@@ -116,14 +121,16 @@ img {
     display: block;
 }
 
-figure > img {
-    margin: 0;
-}
-
-figure > figcaption {
-    color: $muted-color;
-    font-size: .88rem;
-    line-height: 1.32rem;
+figure {
+    img {
+        margin: 0;
+    }
+    
+    figcaption {
+        color: $muted-color;
+        font-size: .88rem;
+        line-height: 1.32rem;
+    }
 }
 
 /* lists */
@@ -132,15 +139,17 @@ ul, ol {
     list-style-position: inside;
 }
 
-ul ul, ul ol, ul dl, 
-ol ul, ol ol, ol dl,
-dl ul, dl ol, dl dl {
-    margin-top: 0;
-    margin-left: 1.5rem;
+ul, ol, dl {
+    ul, ol, dl {
+        margin-top: 0;
+        margin-left: 1.5rem;
+    }
 }
 
-dd {
-    margin-left: 1.5rem;
+dl {
+    dd {
+        margin-left: 1.5rem;
+    } 
 }
 
 /* table */
@@ -151,28 +160,30 @@ table {
     width: 100%;
     overflow-x: auto;
     white-space: nowrap;
-}
+    
+    td, th {
+        border: 1px solid $border-color;
+        text-align: left;
+        padding: .2rem .5rem;
+        padding-right: 1rem;
+    }
 
-td, th {
-    border: 1px solid $border-color;
-    text-align: left;
-    padding: .2rem .5rem;
-    padding-right: 1rem;
-}
+    th, tfoot td {
+        background-color: #eee;
+        font-weight: bold;
+    }
 
-th, tfoot td {
-    background-color: #eee;
-    font-weight: bold;
-}
-
-tr:nth-child(odd) {
-    background-color: $muted-background;
-}
-
-table > caption {
-    caption-side: top;
-    text-align: left;
-    color: $muted-color;
+    tr {
+        &:nth-child(odd){
+            background-color: $muted-background;
+        }
+    }
+    
+    caption {
+        caption-side: top;
+        text-align: left;
+        color: $muted-color;
+    }
 }
 
 /* blockquote */
@@ -183,31 +194,30 @@ blockquote {
     padding: .5rem 0;
     padding-left: 1rem;
     border-left: 5px solid $border-color;
-}
-
-blockquote > cite {
-    color: $muted-color;
-    display: block;
-    font-size: 1rem;
-}
-
-blockquote > cite:before {
-    content: "-"
+    
+    cite {
+        &:before {
+            content: "-";
+        }
+        color: $muted-color;
+        display: block;
+        font-size: 1rem;
+    }
 }
 
 /* a */
 a {
     color: blue;
     text-decoration: none;
-}
+    
+    &:visited {
+        color: purple;
+    }
 
-a:visited {
-    color: purple;
-}
-
-a:hover, a:active {
-    text-decoration: underline;
-    color: red;
+    &:hover, &:active {
+        text-decoration: underline;
+        color: red;
+    }
 }
 
 /* typo additional */

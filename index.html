@@ -7,7 +7,7 @@ layout: default
         <dt>Posts: </dt>
             {% for post in site.posts %}<dd><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a><span class="muted">{{ post.date | date: "%b %-d, %Y" }}</span></dd>{% endfor %}
         <dt>Project: </dt>
-            <dd>White cold drink</dd>
+            <dd><a href="/project/friday">some landing page</a></dd>
         </dl> 
 </main>
 {% include footer.html %}
