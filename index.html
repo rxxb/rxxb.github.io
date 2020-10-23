@@ -2,18 +2,12 @@
 layout: default
 ---
 {% include header.html %}
-<main id=site-main>
-    <p id=posts-container>posts:
-        <ul>
-            {% for post in site.posts %}
-            <li><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a><span class="muted">{{ post.date | date: "%b %-d, %Y" }}</span></li>
-            {% endfor %}
-        </ul>
-    </p>
-    <p>project:
-        <ul>
-            <li><a href="/project/friday/">Friday</a></li>
-        </ul>
-    </p>
+<main id="site-main" class="home">
+    <dl>
+        <dt>Posts: </dt>
+            {% for post in site.posts %}<dd><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a><span class="muted">{{ post.date | date: "%b %-d, %Y" }}</span></dd>{% endfor %}
+        <dt>Project: </dt>
+            <dd>White cold drink</dd>
+        </dl> 
 </main>
 {% include footer.html %}

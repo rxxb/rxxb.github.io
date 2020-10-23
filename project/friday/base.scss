@@ -12,21 +12,26 @@ $root-font-size: 18px;
 // color
 $main-color: #444;
 $main-background: #f1f1f1;
-$border-color: #999;
+$border-color: #bbb;
 $heading-color: #333;
 $muted-color: #666;
+$muted-background: #f5f5f5;
+
+$dark: #444;
+$light: #fff;
 
 html {
     -webkit-tap-highlight-color: transparent;
 }
 
 body {
-    background-color: $main-background;
     font-size: $root-font-size;
     font-family: $sans-serif;
     color: $main-color;
     font-weight: 400;
     line-height: 1.8rem;
+    margin: 50rem 0;
+    margin-top: 0;
 }
 
 body * {
@@ -35,17 +40,17 @@ body * {
     box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6, p, img, pre, ul, ol, dl, table, figure {
+p, 
+h1, h2, h3, h4, h5, h6, 
+pre, 
+img, figure,
+ul, ol, dl, 
+table, 
+blockquote {
     margin-top: 1rem;
 }
-figure > img {
-    margin: 0;
-}
 
-code {
-    font-family: $monospace;
-}
-
+/* heading */
 h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
     color: $heading-color;
@@ -81,13 +86,142 @@ h6 {
     line-height: 2.3rem;
 }
 
+/* code */
+pre, code {
+    line-height: 1.5rem;
+    background-color: $muted-background;
+}
+
+pre  {
+    font-family: $sans-serif;
+    padding: .5rem;
+    border: 1px solid $border-color;
+    overflow: auto;
+}
+
+code {
+    font-family: $monospace;
+    padding: .2rem .3rem;
+}
+
+pre > code {
+    background-color: transparent;
+    padding: 0;
+}
+
+/* image */
+img {
+    max-width: 100%;
+    max-height: 30rem;
+    display: block;
+}
+
+figure > img {
+    margin: 0;
+}
+
+figure > figcaption {
+    color: $muted-color;
+    font-size: .88rem;
+    line-height: 1.32rem;
+}
+
+/* lists */
+ul, ol {
+    margin-left: 1.5rem;
+    list-style-position: inside;
+}
+
+ul ul, ul ol, ul dl, 
+ol ul, ol ol, ol dl,
+dl ul, dl ol, dl dl {
+    margin-top: 0;
+    margin-left: 1.5rem;
+}
+
+dd {
+    margin-left: 1.5rem;
+}
+
+/* table */
+table {
+    display: block;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+td, th {
+    border: 1px solid $border-color;
+    text-align: left;
+    padding: .2rem .5rem;
+    padding-right: 1rem;
+}
+
+th, tfoot td {
+    background-color: #eee;
+    font-weight: bold;
+}
+
+tr:nth-child(odd) {
+    background-color: $muted-background;
+}
+
+table > caption {
+    caption-side: top;
+    text-align: left;
+    color: $muted-color;
+}
+
+/* blockquote */
+blockquote {
+    color: black;
+    font-size: 1.5rem;
+    line-height: 2.3rem;
+    padding: .5rem 0;
+    padding-left: 1rem;
+    border-left: 5px solid $border-color;
+}
+
+blockquote > cite {
+    color: $muted-color;
+    display: block;
+    font-size: 1rem;
+}
+
+blockquote > cite:before {
+    content: "-"
+}
+
+/* a */
+a {
+    color: blue;
+    text-decoration: none;
+}
+
+a:visited {
+    color: purple;
+}
+
+a:hover, a:active {
+    text-decoration: underline;
+    color: red;
+}
+
+/* typo additional */
 .muted {
     color: $muted-color;
 }
 
-/* small but not dwarfed */
+/* small but not dwarfed XD */
 .small, small {
-    font-size: 0.88rem;
+    font-size: .88rem;
     line-height: 1.32rem;
 }
 
+mark {
+    background-color: yellow;
+    padding: .2rem .3rem;
+}

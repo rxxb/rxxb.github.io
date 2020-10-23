@@ -1,75 +1,78 @@
-
 #site-header {
-    margin: 0px;
-    padding: 17px;
-    border-bottom: 1px solid #000;
-}
-
-#site-header > h1 {
-    margin: 0px;
+    padding: 1rem;
+    border-bottom: 1px solid #bbb;
+    
+    h1 {
+        margin: 0;
+    }
 }
 
 #site-main {
     width: 60%;
-    margin: ($main-font-size*2) 20%;
-}
-
-#posts-container ~ ul {
-    list-style-type: none;
-    margin: 0px;
-    padding: 0px;
-}
-
-#posts-container ~ ul li > span::before {
-    content: " • ";
-    color: #000;
-}
-
-#posts-container ~ ul li + li {
-    margin-top: 10px;
+    margin: 2rem 20%;
+    
+    &.home {
+        dl {
+            dd {
+                span {
+                    &:before {
+                        content: " • ";
+                        color: #000;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
 }
 
 #site-footer {
     width: 80%;
     margin: 0px 10%;
-    border-top: 2px solid #999;
+    border-top: 2px solid #eee;
     color: #8c8c8c;
     font-size: 90%; 
     padding: 5px 0px 0px;
+    
+    p {
+        margin: 0;
+    }
  }
 
-#site-footer > p {
-    margin: 0px;
-    padding: 0px;
-}
 #post-header {
-    margin-bottom: $main-font-size;
-}
-#post-header * {
-    margin: 0px;
-}
-#post-meta {
-    font-size: 90%; color: gray;
+    margin-bottom: 1rem;
+    
+    * {
+        margin: 0;
+    }
 }
 
 #post-content {
     width: 100%;
 }
-#post-content > *:last-child {
-    margin-bottom: 0;
-}
 
 @media (max-width: 480px) and (min-width: 320px) {
     #site-main, #site-footer {
-        width: 95%; margin: 0px 2.5%;
+        width: 95%;
+        margin: 0 2.5%;
+    }
+    
+    #site-main {
+        margin: 2rem 2.5%;
     }
     #site-main {
-        margin: ($main-font-size*2) 2.5%;
-    }
-    #posts-container ~ ul li > span {
-        display: block;
-    }
-    #posts-container ~ ul li > span::before {
-        display: none;
+        &.home {
+            dl {
+                dd {
+                    span {
+                        display: block;
+                        
+                        &:before {
+                            content: "";
+                        }
+                    }
+                }
+            }
+        }
     }
 }

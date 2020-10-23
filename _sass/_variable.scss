@@ -1,13 +1,17 @@
-$main-font-family: 'Helvetica', 'Arial', sans-serif;
+// font-family
+$sans-serif: Helvetica, Arial, sans-serif;
 $monospace: monospace, monospace;
 $serif: "Times New Roman", Times, serif;
 
-$main-font-color: lighten( #000, 15% );
-$heading-color: lighten( #000, 10% );
-$muted-color: lighten( #000, 40% );
+// font-size
+$root-font-size: 18px;
 
-$main-font-size: 17px;
+// color
+$main-color: #444;
+$border-color: #bbb;
+$heading-color: #333;
+$muted-color: #666;
+$muted-background: #f5f5f5;
 
-$code-background-color: lighten( #000, 80% );
-
-$light-border-color: lighten( #000, 60% );
+$dark: #444;
+$light: #fff;
