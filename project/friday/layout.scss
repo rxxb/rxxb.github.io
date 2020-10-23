@@ -1,0 +1,29 @@
+---
+---
+
+// font-family
+$sans-serif: Helvetica, Arial, sans-serif;
+$monospace: monospace, monospace;
+$serif: "Times New Roman", Times, serif;
+
+// font-size
+$root-font-size: 16px;
+
+// color
+$main-color: #555;
+$main-background: #f1f1f1;
+$border-color: #999;
+
+#site-header {
+    
+}
+#header-alert {
+    padding: .3rem;
+    margin: 0;
+    background-color: $main-color;
+    color: $main-background;
+    text-align: center;
+}
+#header-image {
+    width: 100%;
+}
