@@ -27,11 +27,11 @@ h5 { font-size: 1.25rem; }
 
 #triggers label { margin: 0 .5rem; vertical-align: middle; }
 
-.post { padding: .1rem .5rem; background-color: #e1e1e1; }
+.post { padding: .7rem .5rem; background-color: #e1e1e1; }
 
 .post + .post { margin-top: 1rem; }
 
-.post-tag, #triggers > label { border: 1px solid #586e75; background-color: #268bd2; padding: .2rem .5rem; border-radius: 5px; color: #fdf6e3; }
+.post-tag, #triggers > label { border: 1px solid #586e75; background-color: #268bd2; padding: .1rem .5rem; border-radius: 5px; color: #fdf6e3; display: inline-block; }
 
 .post-tag:hover, .post-tag:active, #triggers > label:hover, #triggers > label:active { background-color: #1e6ea7; }
 
