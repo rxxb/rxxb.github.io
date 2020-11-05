@@ -40,11 +40,11 @@ function tagSort(tag) {
 (() => {
   /* adding default order attribute */
   const posts=document.querySelectorAll("#post-container > .post");
-  let i=String(0.)+posts.length;
+  let i=String("0.")+posts.length;
   posts.forEach(post=>{
     post.setAttribute('order',i);
     post.setAttribute('rank',0);
-    i-=0.00000001;
+    i-=0.0000000001;
   });
 
   /* Checking triggers */
