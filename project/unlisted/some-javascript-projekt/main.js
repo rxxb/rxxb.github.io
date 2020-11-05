@@ -21,20 +21,19 @@ function tagSort(tag) {
   const sortedPosts=Array.from(posts).sort(function(a,b) {
     const ac=Number(a.getAttribute('rank')) + a.getAttribute('order');
     const bc=Number(b.getAttribute('rank')) + b.getAttribute('order');
-    return ac > bc ? -1 : 1;
+    return bc - ac;
   });
+  
+  /* Create 'fragment' for post */
+  const frag = document.createDocumentFragment();
 
-  /* Resetting posts container */
-  posts_container.innerHTML='';
-
-  /* Applying newly sorted posts to container */
-  let i=0;
+  /* Applying newly sorted posts to fragment */
   sortedPosts.forEach(post=>{
-    setTimeout(() => {
-        posts_container.appendChild(post);
-    }, i * 100);
-    i++;
+    frag.appendChild(post);
   });
+
+  /* Applying newly sorted posts from fragment to container */
+  posts_container.appendChild(frag);
 }
 
 (() => {
