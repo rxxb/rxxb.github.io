@@ -44,7 +44,7 @@ function tagSort(tag) {
   posts.forEach(post=>{
     post.setAttribute('order',i);
     post.setAttribute('rank',0);
-    i-=0.0000000001;
+    i-=0.0000000000000001;
   });
 
   /* Checking triggers */
