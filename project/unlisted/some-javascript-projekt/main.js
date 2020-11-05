@@ -19,8 +19,8 @@ function tagSort(tag) {
 
   /* Sorting posts: this is the hardest part */
   const sortedPosts=Array.from(posts).sort(function(a,b) {
-    const ac=String(a.getAttribute('rank')) + '.' + a.getAttribute('order');
-    const bc=String(b.getAttribute('rank')) + '.' + b.getAttribute('order');
+    const ac=Number(a.getAttribute('rank')) + a.getAttribute('order');
+    const bc=Number(b.getAttribute('rank')) + b.getAttribute('order');
     return ac > bc ? -1 : 1;
   });
 
@@ -40,11 +40,11 @@ function tagSort(tag) {
 (() => {
   /* adding default order attribute */
   const posts=document.querySelectorAll("#post-container > .post");
-  let i=posts.length;
+  let i=String(0.)+posts.length;
   posts.forEach(post=>{
     post.setAttribute('order',i);
     post.setAttribute('rank',0);
-    --i;
+    i-=0.00000001;
   });
 
   /* Checking triggers */
