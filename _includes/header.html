@@ -1,0 +1,10 @@
+<header class="site-header">
+    <h5 style="color: #000; font-weight:bold">rxxb</h5>
+    <p>A blog you can read</p>
+    <nav>
+        <a {% if page.url == '/' %}class="current"{% endif %} href="/">home</a> |
+        <a {% if page.url == '/about.html' %}class="current"{% endif %} href="/about.html">about</a> |
+        <a {% if page.url == '/tags.html' %}class="current"{% endif %} href="/tags.html">tags</a> |
+        <a {% if page.url == '/shit/' %}class="current"{% endif %} href="/shit">shit i say</a>
+    </nav>
+</header>

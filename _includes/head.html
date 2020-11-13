@@ -1,0 +1,18 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% if page.url == "/" %}
+    <meta name="description" content="A blog you can read">
+{% elsif page.desc %}
+<meta name="description" content="{{page.desc}}">
+{% endif %}
+{% if page.customrobot %}
+        <meta name="robots" content="noarchive, {{page.customrobot}}">
+    {% else %}
+        <meta name="robots" content="noarchive{% if page.noindex %}, noindex{% endif %}">
+{% endif %}
+<title>{{ page.title }}</title>
+<link rel="stylesheet" href="/assets/css/normalize.css">
+<link rel="stylesheet" href="/assets/css/pygments.css">
+<link rel="stylesheet" href="/assets/css/styles.css">
+{% if page.extcss %}
+    <link rel="stylesheet" href="{{ page.extcss | join: '" /><link rel="stylesheet" href="'}}" />
+{% endif %}

@@ -1,0 +1,13 @@
+.spoiler {
+    color: #000;
+    background-color: #000;
+  
+    &:hover, &:active {
+      color: #fff;
+    }
+    
+    a {
+      color: inherit;
+      text-decoration: underline;
+    }
+}

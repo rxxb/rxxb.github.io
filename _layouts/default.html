@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include head.html %}
+  </head>
+  <body>
+    {% include header.html %}
+    <main class="site-main" role="main">
+      {{content}}
+    </main>
+    {% include footer.html %}
+    {% if page.extjs %}
+      <script type="text/javascript" src="{{ page.extjs | join: '"></script><script type="text/javascript" src="'}}"></script>
+    {% endif %}
+  </body>
+</html>

@@ -1,0 +1,19 @@
+# url: "" # the base hostname & protocol for your site, e.g. http://example.com
+# baseurl: "/" # the subpath of your site, e.g. /blog
+title: "rxxb" # the name of your site, e.g. ACME Corp.
+permalink: /:year/:month/post/:title
+markdown: kramdown
+highlighter: rouge
+
+collections:
+  shits:
+    output: true
+    permalink: /shit/:name
+
+sass:
+  style: compressed
+  sourcemap: never
+
+kramdown:
+  auto_ids: false
+  header_offset: 2

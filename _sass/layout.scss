@@ -1,0 +1,97 @@
+/*Jekyll Markdown Exceptionnel*/
+div.highlighter-rouge {
+    &:not(:only-child):not(:last-child) {
+      margin-bottom: 1rem;
+    }
+    
+    pre {
+      margin: 0;
+    }
+}
+/* */
+
+body {
+    margin: 1rem .5rem;
+}
+
+header.site-header {
+    * {
+        margin: 0 !important;
+    }
+
+    p {
+        color: #555;
+    }
+    
+    nav {
+        border-top: thick solid #bbb;
+    }
+
+    a.current {
+        pointer-events: none;
+        color: #000;
+        text-decoration: underline;
+        font-weight: bold;
+    }
+}
+
+main.site-main {
+    margin: 1rem 0;
+
+    > header {
+        margin-bottom: 1rem;
+        
+        * {
+            margin: 0 !important;
+        }
+    }
+
+    article {
+        padding-left: .5rem;
+        border-left: thick solid #bbb;
+
+        + article {
+            margin-top: 1rem;
+        }
+
+        > header, > footer {
+            * {
+                margin: 0 !important;
+            }
+            p {
+                color: #555;
+                font-size: calc(1em - 2px);;
+            }
+            p.post-update {
+                color: #000;
+                background-color: #f1f1f1;
+            }
+        }
+        > div.post-summary {
+            margin-top: .5rem;
+        }
+
+        &.post {
+            border: none;
+            padding: 0;
+
+            .post-content {
+                margin: .5rem 0;
+            }
+        }
+    }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    body {
+        max-width: 70%;
+        margin: 1rem auto;
+    }
+}
+
+@media (min-width: 768px) {
+    body {
+        max-width: 50%;
+        margin: 1rem auto;
+    }
+}

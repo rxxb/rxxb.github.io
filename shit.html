@@ -1,0 +1,71 @@
+---
+permalink: /shit/
+title: shit I say
+desc: "Posts that is of no value or offensive or both."
+---
+{% assign tags = site.shits | map: 'tags' | uniq %}
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include head.html %}
+    <style>
+        {% for tag in tags %}#{{tag}}:target ~ main.site-main > header a[tags={{tag}}] {% if forloop.last == false %}, {% endif %}{% endfor %} {
+            color: #000;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+    
+        {% for tag in tags %}#{{tag}}:target ~ main.site-main article[tags~={{tag}}]{% if forloop.last == false %}, {% endif %}{% endfor %} {
+            display: block;
+        }
+    
+        {% for tag in tags %}#{{tag}}:target ~ main.site-main article[tags]:not([tags~={{tag}}]){% if forloop.last == false %}, {% endif %}{% endfor %} {
+            display: none;
+        }
+    </style>
+  </head>
+  <body>
+    <span style="display:none" id="n1rzfqbpo1"></span>
+    <span style="display:none" id="{{ tags | join: '"></span><span style="display:none" id="' }}"></span>    
+    {% include header.html %}
+    <main class="site-main" role="main">
+        <header>
+            <h4>shits</h4>
+            <p>Posts that is of no value or offensive or both.</p>
+            <p style="color:#555; margin-top: 1rem !important;">
+                Filter tag: 
+                <a href="#n1rzfqbpo1">show all</a>,
+                {% for tag in tags %}
+                    <a href="#{{tag}}" tags="{{tag}}">{{tag}}</a>{% if forloop.last == false %}, {% endif %}
+                {% endfor %}
+            </p>
+        </header>
+        {% assign shits = site.shits | sort: "date" | reverse %}
+        {% for shit in shits %}
+            <article tags="{% for tag in shit.tags %}{{tag}}{% if forloop.last == false %}{{" "}}{% endif %}{% endfor %}">
+                <header>
+                    <h5><a href="{{ shit.url | prepend: site.baseurl }}">{{ shit.title }}</a></h5>
+                    <p class="post-date">Posted on <time>{{ shit.date | date: "%b %d, %Y"}}</time></p>
+                    {% if post.update %}
+                        <p class="post-update">Updated on <time>{{ shit.update | date: "%b %d, %Y"}}</time></p>
+                    {% endif %}
+                </header>
+                {% if shit.summary %}
+                    <div class="post-summary">
+                        <p>{{shit.summary}}</p>
+                    </div>
+                {% endif %}
+                <footer>
+                    <p class="post-tags">
+                        Tags: 
+                        {% for tag in shit.tags %}
+                            <a href="/shit/#{{tag}}" class="post-tag">{{tag}}</a>{% if forloop.last == false %}, {% endif %} 
+                        {% endfor %}
+                    </p>
+                </footer>
+            </article>
+        {% endfor %}
+    </main>
+    {% include footer.html %}
+  </body>
+</html>
